@@ -42,6 +42,6 @@ public class ConverterControllerTest {
                 .content(objectMapper.writeValueAsBytes(foot)))
             .andExpect(status().isOk())
                 .andExpect(jsonPath("$.unit").value("meter"))
-                .andExpect(jsonPath("$.value").value(closeTo(0.3049, 0.0005)));
+                .andExpect(jsonPath("$.value").value(closeTo(0.3049, 0.0001)));
     }
 }

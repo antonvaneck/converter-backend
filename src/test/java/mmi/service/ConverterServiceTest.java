@@ -4,6 +4,7 @@ import mmi.domain.UnitValue;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.hamcrest.Matchers.closeTo;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
@@ -19,7 +20,7 @@ public class ConverterServiceTest {
     public void convert() throws NoSuchUnitException {
         final UnitValue meter = service.toMetric(new UnitValue("foot", 1));
         assertThat(meter.getUnit(), is("meter"));
-        assertThat(meter.getValue(), is(0.3048));
+        assertThat(meter.getValue(), closeTo(0.3048, 0.00001));
     }
 
     @Test(expected = NoSuchUnitException.class)
