@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: unit-converter-backend
+spec:
+  selector:
+    app: unit-converter-backend
+  ports:
+    - protocol: TCP
+      port: 8080
+  type: ClusterIP

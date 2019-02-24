@@ -1,5 +1,10 @@
 # Unit Converter
 
+Build Spring Boot application
+```
+mvn clean install
+```
+
 Build Docker image
 ```
 docker build -t <image name> .
